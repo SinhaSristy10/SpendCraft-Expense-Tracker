@@ -40,7 +40,7 @@ export class ChartManager {
    */
   renderTrendsChart() {
     const ctx = document.getElementById('trendsChart');
-    if (!ctx) return;
+    if (!ctx || !window.Chart) return;
 
     const trends = this.dataStore.getMonthlyTrends(6);
     const theme = this.getThemeColors();
@@ -139,7 +139,7 @@ export class ChartManager {
   renderCategoryChart(selectedMonth = null) {
     const ctx = document.getElementById('categoryChart');
     const emptyState = document.getElementById('categoryEmptyState');
-    if (!ctx) return;
+    if (!ctx || !window.Chart) return;
 
     const breakdown = this.dataStore.getCategoryBreakdown(selectedMonth);
     const theme = this.getThemeColors();

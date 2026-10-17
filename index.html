@@ -584,18 +584,7 @@
   <!-- ================= TOAST NOTIFICATION CONTAINER ================= -->
   <div id="toastContainer"></div>
 
-  <!-- Application Script Loader (Dual-mode: ES Module on HTTP/localhost, Standalone Bundle on file://) -->
-  <script>
-    (function() {
-      const script = document.createElement('script');
-      if (window.location.protocol === 'file:') {
-        script.src = 'js/bundle.js';
-      } else {
-        script.type = 'module';
-        script.src = 'js/app.js';
-      }
-      document.body.appendChild(script);
-    })();
-  </script>
+  <!-- Application Script: Standalone bundle ensures zero-config execution on both web servers and direct file:// access -->
+  <script src="js/bundle.js" defer></script>
 </body>
 </html>
