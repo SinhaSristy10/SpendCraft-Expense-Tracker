@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "functions": {
+    "server.js": {
+      "includeFiles": "{css/**,js/**,index.html}"
+    }
+  }
 }
